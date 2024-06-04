@@ -1,4 +1,5 @@
-FROM openjdk:17
-EXPOSE 4545
-ADD target/IMADWRGH.jar IMADWRGH.jar
-ENTRYPOINT ["java","-jar","/IMADWRGH.jar"]
+FROM openjdk:17-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
