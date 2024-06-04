@@ -24,7 +24,6 @@ jobs:
 
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
-    with:
       image: imadwrgh/imadwrgh
       tags: latest
       registry: docker.io
