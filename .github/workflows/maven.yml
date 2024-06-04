@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      -  main
+      - main
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
 
       - name: Push Docker image
-        run: docker push  imadwrgh/mica:latest
+        run: docker push imadwrgh/mica:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -50,7 +50,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
             cd /home/tp1/imad_ASSERNE
-            docker pull  imadwrgh/mica:latest
+            docker pull imadwrgh/mica:latest
             if [ $(docker ps -a -q -f name=container-imad) ]; then
               docker stop container-imad
               docker rm container-imad
