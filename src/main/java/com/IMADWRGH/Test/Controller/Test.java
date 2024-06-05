@@ -10,6 +10,6 @@ public class Test {
 
     @GetMapping(path = "/test")
     public String test(){
-        return "IMAD";
+        return "IMAD ASSERNE";
     }
 }
